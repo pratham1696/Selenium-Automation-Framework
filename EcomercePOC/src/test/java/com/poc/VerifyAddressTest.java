@@ -1,0 +1,83 @@
+package com.poc;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+public class VerifyAddressTest extends WebDriverTest {
+	@Test
+	public void verifyAddress() {
+		weburl();
+		WebElement registerElement = driver.findElement(By.xpath("//a[contains(@href, '/login')]"));
+		registerElement.click();
+		sleep(2);
+		WebElement nameElement = driver.findElement(By.name("name"));
+		nameElement.sendKeys("Test");
+		sleep(2);
+		WebElement emailElement = driver.findElement(By.xpath("//input[contains(@data-qa , 'signup-email')]"));
+		emailElement.sendKeys("Test.Demo@yopmail.com");
+		sleep(2);
+		WebElement signup = driver.findElement(By.xpath("//button[contains(@data-qa , 'signup-button')]"));
+		signup.click();
+		sleep(2);
+		WebElement password = driver.findElement(By.id("password"));
+		password.sendKeys("Hello@123");
+		sleep(2);
+		Select date = new Select(driver.findElement(By.name("days")));
+		date.selectByValue("25");
+		sleep(2);
+		Select month = new Select(driver.findElement(By.id("months")));
+		month.selectByIndex(7);
+		Select year = new Select(driver.findElement(By.name("years")));
+		year.selectByValue("2000");
+		sleep(2);
+		WebElement checkbox1 = driver.findElement(By.xpath("//input[contains(@id , 'newsletter')]"));
+		checkbox1.click();
+		sleep(2);
+		WebElement checkbox2 = driver.findElement(By.xpath("//input[contains(@id , 'optin')]"));
+		checkbox2.click();
+		sleep(2);
+		WebElement firstname = driver.findElement(By.name("first_name"));
+		firstname.sendKeys("Test");
+		sleep(2);
+		WebElement lastname = driver.findElement(By.name("last_name"));
+		lastname.sendKeys("Demo");
+		sleep(2);
+		WebElement company = driver.findElement(By.name("company"));
+		company.sendKeys("Mayank");
+		sleep(2);
+		WebElement address1 = driver.findElement(By.name("address1"));
+		address1.sendKeys("45-142-27 C3");
+		sleep(2);
+		WebElement address2 = driver.findElement(By.name("address2"));
+		address2.sendKeys("neeladri nagar ");
+		sleep(2);
+		Select country = new Select(driver.findElement(By.name("country")));
+		country.selectByValue("India");
+		sleep(2);
+		WebElement state = driver.findElement(By.name("state"));
+		state.sendKeys("jharkhand");
+		sleep(2);
+		WebElement city = driver.findElement(By.name("city"));
+		city.sendKeys("Dumka");
+		sleep(2);
+		WebElement zipcode = driver.findElement(By.name("zipcode"));
+		zipcode.sendKeys("814101");
+		sleep(2);
+		WebElement mobile = driver.findElement(By.name("mobile_number"));
+		mobile.sendKeys("+91 9987642234");
+		sleep(2);
+		WebElement create = driver.findElement(By.xpath("//button[contains(@data-qa , 'create-account')]"));
+		create.click();
+		sleep(2);
+		WebElement continuebutton = driver.findElement(By.xpath("//a[contains(@data-qa , 'continue-button')]"));
+		continuebutton.click();
+		sleep(2);
+		WebElement deleteaccount = driver.findElement(By.xpath("//a[@href = '/delete_account']"));
+		deleteaccount.click();
+		sleep(2);
+		WebElement continuebutton1 = driver.findElement(By.xpath("//a[contains(@class , 'btn-primary')]"));
+		continuebutton1.click();
+	}
+}
