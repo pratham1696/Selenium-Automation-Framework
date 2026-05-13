@@ -49,6 +49,3 @@ The framework is designed with a clear separation of concerns:
 **Prathamesh Dhakane**  
 *Senior QA Consultant*  
 [https://www.linkedin.com/in/prathamesh-dhakane-140763131/]
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/pratham1696/Selenium-Automation-Framework.git](https://github.com/pratham1696/Selenium-Automation-Framework.git)
